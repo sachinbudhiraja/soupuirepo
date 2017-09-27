@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d1a48efa-eaad-4c44-adbf-344e0ac117a2" activeEnvironment="Default" name="REST" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="ProjectSettings@hermesConfig">${#System#user.home}\.hermes</con:setting></con:settings><con:interface xsi:type="con:RestService" id="ba3be22d-9346-4203-912a-69c449c2221a" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8000" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8000</con:endpoint></con:endpoints><con:resource name="Issue" path="/rest/api/2/issue" id="d59e3a8c-c307-4c51-8496-471859804a4b"><con:settings/><con:parameters/><con:method name="Issue" id="84910fc6-248a-4c9c-b59f-f1cf8311010f" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>201</con:status><con:params/><con:element xmlns:iss="http://localhost/jira/rest/api/2/issue">iss:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:iss="http://localhost/jira/rest/api/2/issue">iss:Fault</con:element></con:representation><con:request name="Request 1" id="3e63a911-4a10-4c13-a36b-a54b8989c324" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request>{"fields":{
+          "project" :
+               {"key" : "TES"},
+              "description" : "NA",
+              "priority" :{"name": "High"},
+              "reporter":{"name": "admin"},
+              "assignee" :{"name": "admin"},
+              "summary" :"rest test issue",
+              "issuetype" :{"name" : "Task"}
+}	
+
+}</con:request><con:originalUri>http://localhost/jira/rest/api/2/issue</con:originalUri><con:credentials><con:username>admin</con:username><con:password>admin</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="c86d5a69-b329-49b2-b76d-fa64e82729c8" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8000" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8000</con:endpoint></con:endpoints><con:resource name="Key" path="/rest/api/2/issue/{key}" id="7994b1da-5c5f-472b-853a-faa16e7eba88"><con:settings/><con:parameters><con:parameter><con:name>key</con:name><con:value>key</con:value><con:style>TEMPLATE</con:style><con:default>key</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Key" id="bf8cfa63-fc9b-409b-a19b-73a5dad24861" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:tes="http://localhost/rest/api/2/issue/TES-8">tes:Fault</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>405</con:status><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:tes="http://localhost/rest/api/2/issue/TES-8">tes:Response</con:element></con:representation><con:request name="Request 1" id="f35ab30c-c1dc-46c0-92c1-501bb0b72683" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/rest/api/2/issue/TES-8</con:originalUri><con:credentials><con:username>admin</con:username><con:password>admin</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="key" value="TES-8" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>key</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="9d5de9c5-eea0-4150-b42f-954605cfe265" name="libraray"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="bf0ae3bf-361c-4522-bccb-555c6beec03b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="mathematics" searchProperties="true"><con:settings/><con:testStep type="groovy" name="add" id="a9f492cb-5f43-4eb6-9608-c26793eddd10"><con:settings/><con:config><script>class Addition
+{
+     def log
+     def context
+     def testRunner
+
+     def Addition(log,context,testRunner)
+     {
+     	this.log=log
+     	this.context=context
+     	this.testRunner=testRunner
+     }
+	
+	def add1()
+	{
+		log.info ("sachin")
+	}
+
+}
+
+	
+context.setProperty("obj1",new Addition(log,context,testRunner))
+    
+	
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="dd5569f6-0c0c-4b18-b935-2c00ef315bcf" name="Jira"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e8135e80-f336-488e-a648-d2bfba93e203" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="create issue" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="step1" id="976ca60a-16f9-49d1-a387-06638084ce1f"><con:settings/><con:config service="http://localhost:8000" resourcePath="/rest/api/2/issue" methodName="Issue" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="step1" id="3e63a911-4a10-4c13-a36b-a54b8989c324" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request>{"fields":{
+          "project" :
+               {"key" : "TES"},
+              "description" : "NA",
+              "priority" :{"name": "${#TestCase#p}"},
+              "reporter":{"name": "${step1#Username}"},
+              "assignee" :{"name": "admin"},
+              "summary" :"rest test issue",
+              "issuetype" :{"name" : "Task"}
+}	
+
+}</con:request><con:originalUri>http://localhost/jira/rest/api/2/issue</con:originalUri><con:credentials><con:username>admin</con:username><con:password>admin</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>p</con:name><con:value>High</con:value></con:property></con:properties></con:testCase><con:testCase id="3f866122-7255-4bb8-8136-7d2dbc7a77ae" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="search_issue" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="step1" id="1c2e2f0a-7630-464b-b71f-0d3f45b1985b"><con:settings/><con:config service="http://localhost:8000" resourcePath="/rest/api/2/issue/{key}" methodName="Key" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="step1" id="f35ab30c-c1dc-46c0-92c1-501bb0b72683" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8000</con:endpoint><con:request/><con:originalUri>http://localhost/rest/api/2/issue/TES-8</con:originalUri><con:credentials><con:username>admin</con:username><con:password>admin</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="key" value="${#TestCase#issueid}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>key</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="surlper" id="6a422b49-4f31-4488-9378-402c600236f9"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+def slurper = new JsonSlurper()
+
+def response =context.expand(' ${step1#Response}')
+
+
+
+
+def js=slurper.parseText(response)
+log.info js.fields.issuetype.name
+
+assert "Task" == js.fields.issuetype.name</script></con:config></con:testStep><con:testStep type="transfer" name="Property Transfer" id="c3608c87-b2ef-4cd1-a40f-437e3a919506"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>name</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>step1</con:sourceStep><con:sourcePath>fields.issuetype.name</con:sourcePath><con:targetType>priority</con:targetType><con:targetStep>#Project#</con:targetStep><con:type>JSONPATH</con:type><con:targetTransferType>JSONPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:properties><con:property><con:name>issueid</con:name><con:value>TES-8</con:value></con:property></con:properties></con:testCase><con:testCase id="9369958a-ca04-484b-ae37-0eab575e1a61" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="uselibrarymethods" searchProperties="true"><con:settings/><con:testStep type="groovy" name="reuse code" id="73ebb330-89cb-4999-beb1-7ed84edb5774"><con:settings/><con:config><script>def suitref=testRunner.testCase.testSuite.project.testSuites["libraray"]
+def resuse=suitref.testCases["mathematics"].testSteps["add"]
+resuse.run(testRunner,context)
+def myobj=context.obj1
+
+myobj.add1()
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="87182927-50b1-4846-9412-7e76f8ea1f5c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="runexternalscript" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="d8ec15ba-916f-4cba-bf05-d1a325f41636" disabled="true"><con:settings/><con:config><script>import groovy.lang.Binding
+import groovy.util.GroovyScriptEngine
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+
+// define location of script file is relative to SOAPUI project file.
+String projectPathscriptPath = groovyUtils.projectPath
+
+// Create Groovy Script Engine to run Scriptthe script.
+GroovyScriptEngine gse = new GroovyScriptEngine(projectPathscriptPath) 
+
+// Load the Groovy Script file 
+externalScript = gse.loadScriptByName("script.groovy")  
+
+// Create a runtime instance of script
+instance = externalScript.newInstance()
+
+// Sanity check 
+assert instance!= null
+
+// run athe foo method in the external script
+instance.foo()</script></con:config></con:testStep><con:testStep type="groovy" name="basicmethodgroovy" id="acbc379b-02e5-421f-a4b8-4e76d6ae0a8b"><con:settings/><con:config><script>//how to get env details
+def env = testRunner.testCase.testSuite.project.activeEnvironment.name
+log.info "Enviornment  =" + env
+
+//get test step count of diffrent test suit
+log.info testStepCount= testRunner.testCase.testSuite.project.testSuites["libraray"].testCases["mathematics"].getTestStepCount();
+//get test step count of diffrent test suit
+log.info testStepCount= testRunner.testCase.testSuite.testCases["create issue"].getTestStepCount();
+
+//how to get project name 
+log.info "projectname=" + testRunner.testCase.testSuite.project.name
+
+</script></con:config></con:testStep><con:testStep type="properties" name="Properties" id="81f71b17-0b71-42b3-9873-e7b8a9a91d7c"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:source>H:/Workspace_selenium/RodanAutomation/src/main/java/conf.properties</con:source><con:properties><con:property><con:name>name</con:name><con:value>sachin</con:value></con:property><con:property><con:name>browser</con:name><con:value>chrome</con:value></con:property><con:property><con:name>url</con:name><con:value>naukri.com</con:value></con:property><con:property><con:name>authreq</con:name><con:value>false</con:value></con:property><con:property><con:name>email</con:name><con:value>false</con:value></con:property><con:property><con:name>authid</con:name><con:value>r+f-qa</con:value></con:property><con:property><con:name>authpass</con:name><con:value>4llH41l7h3Gl0wCl0ud</con:value></con:property><con:property><con:name>username</con:name><con:value>budhirajasachin81@gmail.com</con:value></con:property><con:property><con:name>password</con:name><con:value>ChangeMe11</con:value></con:property><con:property><con:name>report_path</con:name><con:value>H:\Workspace_selenium\RodanAutomation\reports\report.html</con:value></con:property><con:property><con:name>screenshot_path</con:name><con:value>H:\Workspace_selenium\RodanAutomation\screeenshots\</con:value></con:property><con:property><con:name>browserdriver_path</con:name><con:value>H:\Workspace_selenium\RodanAutomation\libraries</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="transfer" name="Property Transfer" id="7f0cbae2-dc7a-4fdc-bec3-c74abeb5da48"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>priority</con:name><con:value>High</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
